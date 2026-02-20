@@ -1,5 +1,5 @@
-@import "tailwindcss";
-@import "tw-animate-css";
+@import 'tailwindcss';
+@import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
 
@@ -54,9 +54,14 @@
   --breakpoint-2xl: 1550px;
   /*======> Custom Colors <=======*/
   /*======> dark mode <=======*/
-  --color-primary-100: #28a745;
-  --color-primary-200: #151519;
-  --color-secondary: #2a2d33;
+
+  /* --primary-main: #2563eb;
+  --primary-light: #3b82f6;
+  --secondary-text: #94a3b8;
+  --bg-main: #020617;
+  --bg-card: #0f172a;
+  --accent-star: #fbbf24;
+  --text-main: #f8fafc; */
 }
 
 :root {
