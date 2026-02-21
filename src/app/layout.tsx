@@ -1,4 +1,4 @@
-import MainNavigationBar from '@/components/shared/dashboard/MainNavigationBar/MainNavigationBar';
+import MainNavigationBar from '@/components/shared/main/MainNavigationBar/MainNavigationBar';
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
