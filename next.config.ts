@@ -5,13 +5,23 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'image.tmdb.org',
-        pathname: '/t/p/**',
+        hostname: '**.tmdb.org',
       },
       {
         protocol: 'https',
-        hostname: 'via.placeholder.com',
-        pathname: '/**',
+        hostname: 'images.unsplash.com',
+      },
+      {
+        protocol: 'https',
+        hostname: '**.placeholder.com',
+      },
+      {
+        protocol: 'https',
+        hostname: '**.wikimedia.org',
+      },
+      {
+        protocol: 'https',
+        hostname: '**.googleusercontent.com',
       },
     ],
   },

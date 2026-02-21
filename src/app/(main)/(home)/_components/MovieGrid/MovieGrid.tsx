@@ -14,7 +14,7 @@ interface Movie {
 
 const MovieGrid = ({ movies }: { movies: Movie[] }) => {
   return (
-    <section className="container mx-auto px-4 py-12">
+    <section className="mx-auto max-w-400 px-4 py-12">
       <h2 className="mb-8 border-l-4 border-[#2563eb] pl-4 text-3xl font-bold text-[#f8fafc]">
         Popular Movies
       </h2>

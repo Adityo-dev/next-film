@@ -14,7 +14,6 @@ const MainNavigationBar = () => {
   const [results, setResults] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
-  // স্ক্রল হ্যান্ডলার
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -23,7 +22,6 @@ const MainNavigationBar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // লাইভ সার্চ এপিআই কল (Debouncing সহ)
   useEffect(() => {
     const fetchResults = async () => {
       if (searchQuery.trim().length < 2) {
@@ -65,7 +63,7 @@ const MainNavigationBar = () => {
             : 'bg-transparent py-6'
         }`}
       >
-        <div className="container mx-auto flex items-center justify-between px-6 md:px-12">
+        <div className="mx-auto flex max-w-400 items-center justify-between px-4">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
             <span className="text-2xl font-black tracking-tighter text-white uppercase italic">
