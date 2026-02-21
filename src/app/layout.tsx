@@ -1,3 +1,4 @@
+import MainFooter from '@/components/shared/main/MainFooter/MainFooter';
 import MainNavigationBar from '@/components/shared/main/MainNavigationBar/MainNavigationBar';
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
@@ -31,6 +32,7 @@ export default function RootLayout({
       >
         <MainNavigationBar />
         {children}
+        <MainFooter />
       </body>
     </html>
   );
