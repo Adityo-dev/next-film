@@ -1,5 +1,6 @@
 import MainFooter from '@/components/shared/main/MainFooter/MainFooter';
 import MainNavigationBar from '@/components/shared/main/MainNavigationBar/MainNavigationBar';
+import Providers from '@/providers/providers';
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
@@ -31,7 +32,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} max-w-screen overflow-x-hidden antialiased`}
       >
         <MainNavigationBar />
-        {children}
+        <Providers>{children}</Providers>
         <MainFooter />
       </body>
     </html>

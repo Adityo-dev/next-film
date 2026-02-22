@@ -4,5 +4,5 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "always"
   },
-  "cSpell.words": ["cinephiles"]
+  "cSpell.words": ["cinephiles", "TMDB"]
 }
