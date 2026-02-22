@@ -22,7 +22,7 @@ export default function TopActors() {
         ACTORS
       </div>
 
-      <div className="relative z-10 container mx-auto mb-16 px-6">
+      <div className="relative z-10 mx-auto mb-16 max-w-400 px-6">
         <div className="flex items-center justify-between">
           <div className="space-y-2">
             <h2 className="text-4xl font-black tracking-tighter text-white uppercase italic md:text-5xl">

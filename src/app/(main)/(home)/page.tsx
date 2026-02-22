@@ -21,7 +21,7 @@ const HomePage = async () => {
   const trendingMovies = await getMovies('trending/movie/day');
 
   return (
-    <main className="min-h-screen bg-[#020617] text-white">
+    <main className="min-h-screen overflow-hidden bg-[#020617] text-white">
       <Hero trendingMovies={trendingMovies} />
       <PopularMovies />
       <TopTenSection />
