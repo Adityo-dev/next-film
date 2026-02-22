@@ -196,7 +196,6 @@ const MainNavigationBar = () => {
                 <p className="text-lg text-gray-500 italic">No results found for {searchQuery}</p>
               </div>
             ) : (
-              /* Trending Categories (যখন ইউজার কিছু টাইপ করছে না) */
               <div className="animate-in fade-in slide-in-from-bottom-4 text-center duration-700">
                 <p className="mb-6 text-xs font-black tracking-[0.3em] text-gray-500 uppercase">
                   Trending Searches

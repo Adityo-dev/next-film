@@ -51,13 +51,13 @@ export default function UpcomingSection() {
           slidesPerView={'auto'}
           speed={1500}
           grabCursor={true}
-          className="!overflow-visible"
+          className="overflow-visible!"
         >
           {movies?.map((movie: Movie) => (
-            <SwiperSlide key={movie.id} className="!w-fit">
+            <SwiperSlide key={movie.id} className="w-fit!">
               <Link href={`/movie/${movie.id}`} className="group relative block w-52 md:w-64">
                 {/* Poster Container */}
-                <div className="relative aspect-[2/3] overflow-hidden rounded-xl bg-gray-900 ring-1 ring-white/10 transition-all duration-500 group-hover:shadow-[0_0_30px_rgba(37,99,235,0.2)] group-hover:ring-blue-500/50">
+                <div className="relative aspect-2/3 overflow-hidden rounded-xl bg-gray-900 ring-1 ring-white/10 transition-all duration-500 group-hover:shadow-[0_0_30px_rgba(37,99,235,0.2)] group-hover:ring-blue-500/50">
                   <Image
                     src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
                     fill
@@ -66,7 +66,7 @@ export default function UpcomingSection() {
                   />
 
                   {/* Bottom Gradient for Text */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80" />
+                  <div className="absolute inset-0 bg-linear-to-t from-black via-transparent to-transparent opacity-80" />
 
                   {/* Rating / Info Badge */}
                   <div className="absolute top-3 left-3 flex items-center gap-1 rounded-md border border-white/10 bg-black/60 px-2 py-1 backdrop-blur-md">

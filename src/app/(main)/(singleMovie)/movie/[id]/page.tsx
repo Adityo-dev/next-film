@@ -39,7 +39,7 @@ export default async function Page({ params }: { params: { id: string } }) {
         />
         <div className="absolute inset-0 bg-linear-to-t from-[#020617] via-[#020617]/40 to-transparent" />
 
-        <div className="relative container mx-auto flex h-full items-end px-4 pb-12 md:px-8">
+        <div className="relative mx-auto flex h-full max-w-400 items-end px-4 pb-12 md:px-8">
           <div className="flex flex-col gap-8 lg:flex-row lg:items-center">
             {/* Poster Card */}
             <div className="hidden w-72 shrink-0 overflow-hidden rounded-2xl border border-white/10 shadow-2xl lg:block">

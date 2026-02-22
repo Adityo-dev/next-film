@@ -24,7 +24,7 @@ export default function ActorDetails() {
 
   return (
     <main className="min-h-screen bg-[#020617] px-6 py-20">
-      <div className="container mx-auto">
+      <div className="mx-auto max-w-400">
         <h2 className="mb-10 text-3xl font-black text-white uppercase italic">
           Movies <span className="text-blue-600">Featuring Him/Her</span>
         </h2>
