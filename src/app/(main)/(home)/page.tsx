@@ -1,5 +1,10 @@
+import CallToAction from './_components/CallToAction/CallToAction';
+import GenreSection from './_components/GenreSection/GenreSection';
 import Hero from './_components/Hero/Hero';
-import MovieGrid from './_components/MovieGrid/MovieGrid';
+import PopularMovies from './_components/PopularMovies/PopularMovies';
+import TopActors from './_components/TopActors/TopActors';
+import TopTenSection from './_components/TopTenSection/TopTenSection';
+import UpcomingSection from './_components/UpcomingSection/UpcomingSection';
 
 async function getMovies(endpoint: string) {
   const res = await fetch(
@@ -14,13 +19,16 @@ async function getMovies(endpoint: string) {
 
 const HomePage = async () => {
   const trendingMovies = await getMovies('trending/movie/day');
-  const popularMovies = await getMovies('movie/popular');
 
   return (
     <main className="min-h-screen bg-[#020617] text-white">
       <Hero trendingMovies={trendingMovies} />
-
-      <MovieGrid movies={popularMovies} />
+      <PopularMovies />
+      <TopTenSection />
+      <GenreSection />
+      <UpcomingSection />
+      <TopActors />
+      <CallToAction />
     </main>
   );
 };
