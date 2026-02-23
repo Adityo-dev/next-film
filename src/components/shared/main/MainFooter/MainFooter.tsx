@@ -39,7 +39,7 @@ const MainFooter = () => {
                   placeholder="Enter your email"
                   className="w-full rounded-xl border border-white/10 bg-white/5 py-4 pr-14 pl-6 text-sm text-white transition-all outline-none focus:border-blue-600/50 focus:ring-4 focus:ring-blue-600/10"
                 />
-                <button className="absolute top-2 right-2 flex h-10 w-10 items-center justify-center rounded-lg bg-blue-600 text-white shadow-lg shadow-blue-600/20 transition-all hover:scale-105 active:scale-95">
+                <button className="absolute top-2 right-2 flex h-10 w-10 cursor-pointer items-center justify-center rounded-lg bg-blue-600 text-white shadow-lg shadow-blue-600/20 transition-all hover:scale-105 active:scale-95">
                   <Send size={18} />
                 </button>
               </div>

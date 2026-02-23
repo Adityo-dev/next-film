@@ -4,7 +4,7 @@ import { Movie } from '@/types/movie';
 import { ChevronLeft, ChevronRight, Loader2, Star } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Navigation } from 'swiper/modules';
+import { Autoplay, Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/css';
@@ -45,12 +45,17 @@ export default function UpcomingSection() {
         </div>
 
         <Swiper
-          modules={[Navigation]}
+          modules={[Navigation, Autoplay]}
           navigation={{ prevEl: '.upcoming-prev', nextEl: '.upcoming-next' }}
           spaceBetween={25}
           slidesPerView={'auto'}
-          speed={1500}
+          speed={800}
+          autoplay={{
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          }}
           grabCursor={true}
+          loop={true}
           className="overflow-visible!"
         >
           {movies?.map((movie: Movie) => (

@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 'use client';
 
-import { Loader2, Search } from 'lucide-react';
+import { Film, Loader2, Search } from 'lucide-react'; // Film আইকন যোগ করা হয়েছে
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter, useSearchParams } from 'next/navigation';
@@ -15,6 +15,39 @@ interface Movie {
   vote_average: number;
   release_date: string;
 }
+
+const MovieCardImage = ({ movie }: { movie: Movie }) => {
+  const [imgSrc, setImgSrc] = useState(
+    movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : '/no-poster.jpg',
+  );
+
+  return (
+    <div className="relative aspect-2/3 overflow-hidden rounded-2xl border border-white/5 bg-white/5 transition-all duration-500 group-hover:-translate-y-2 group-hover:border-blue-500/50">
+      {movie.poster_path ? (
+        <Image
+          src={imgSrc}
+          width={600}
+          height={700}
+          alt={movie.title}
+          className="h-full w-full object-cover"
+          loading="lazy"
+          onError={() =>
+            setImgSrc('https://images.unsplash.com/photo-1440404653325-ab127d49abc1?q=80&w=2070')
+          }
+        />
+      ) : (
+        <div className="flex h-full w-full flex-col items-center justify-center gap-3 bg-gray-900 text-gray-700">
+          <Film size={48} strokeWidth={1} />
+          <p className="text-[10px] font-black tracking-widest uppercase">No Preview</p>
+        </div>
+      )}
+
+      <div className="absolute top-2 right-2 rounded-lg border border-white/10 bg-black/60 px-2 py-1 text-[10px] font-black text-yellow-500 backdrop-blur-md">
+        ★ {movie.vote_average.toFixed(1)}
+      </div>
+    </div>
+  );
+};
 
 export default function MoviesPage() {
   return (
@@ -79,7 +112,6 @@ function MoviesContent() {
 
     fetchMovies();
 
-    // Update Url
     const params = new URLSearchParams();
     if (searchTerm) params.set('search', searchTerm);
     if (activeGenre !== '0') params.set('genre', activeGenre);
@@ -88,7 +120,7 @@ function MoviesContent() {
 
   return (
     <main className="min-h-screen bg-[#020617] text-white">
-      {/* --- HERO SECTION (Fixed Image) --- */}
+      {/* --- HERO SECTION --- */}
       <div className="relative h-[50vh] w-full overflow-hidden">
         <div className="absolute inset-0 z-10 bg-linear-to-t from-[#020617] via-[#020617]/20 to-transparent" />
 
@@ -98,10 +130,11 @@ function MoviesContent() {
               ? `https://image.tmdb.org/t/p/original${movies[0].backdrop_path}`
               : 'https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?q=80&w=2070'
           }
-          width={600}
-          height={700}
+          width={1920} // Backdrop এর জন্য width বাড়ানো হয়েছে
+          height={1080}
           className="h-full w-full object-cover opacity-50 transition-opacity duration-1000"
           alt="Featured Movie"
+          priority // Hero ইমেজ দ্রুত লোড হওয়ার জন্য
         />
         <div className="absolute bottom-12 left-6 z-20 max-w-2xl space-y-2 lg:left-12">
           <h1 className="text-4xl font-black tracking-tighter uppercase italic lg:text-6xl">
@@ -124,7 +157,7 @@ function MoviesContent() {
                   setActiveGenre(genre.id);
                   setSearchTerm('');
                 }}
-                className={`rounded-xl px-5 py-2 text-xs font-bold transition-all ${
+                className={`cursor-pointer rounded-md px-5 py-2 text-xs font-bold transition-all ${
                   activeGenre === genre.id && !searchTerm
                     ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/40'
                     : 'bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white'
@@ -145,7 +178,7 @@ function MoviesContent() {
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               placeholder="Search for movies..."
-              className="w-full rounded-2xl border border-white/10 bg-white/5 py-3 pr-6 pl-12 text-sm transition-all outline-none placeholder:text-gray-600 focus:border-blue-500/50"
+              className="w-full rounded-md border border-white/10 bg-white/5 py-3 pr-6 pl-12 text-sm transition-all outline-none placeholder:text-gray-600 focus:border-blue-500/50"
             />
           </div>
         </div>
@@ -160,23 +193,8 @@ function MoviesContent() {
             {movies.length > 0 ? (
               movies.map((movie) => (
                 <Link href={`/movie/${movie?.id}`} key={movie.id} className="group cursor-pointer">
-                  <div className="relative aspect-2/3 overflow-hidden rounded-2xl border border-white/5 bg-white/5 transition-all duration-500 group-hover:-translate-y-2 group-hover:border-blue-500/50">
-                    <Image
-                      src={
-                        movie.poster_path
-                          ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
-                          : '/api/placeholder/400/600'
-                      }
-                      width={600}
-                      height={700}
-                      alt={movie.title}
-                      className="h-full w-full object-cover"
-                      loading="lazy"
-                    />
-                    <div className="absolute top-2 right-2 rounded-lg border border-white/10 bg-black/60 px-2 py-1 text-[10px] font-black text-yellow-500 backdrop-blur-md">
-                      ★ {movie.vote_average.toFixed(1)}
-                    </div>
-                  </div>
+                  <MovieCardImage movie={movie} />
+
                   <div className="mt-3 space-y-1">
                     <h3 className="line-clamp-1 text-sm font-bold text-gray-200 transition-colors group-hover:text-blue-500">
                       {movie.title}
