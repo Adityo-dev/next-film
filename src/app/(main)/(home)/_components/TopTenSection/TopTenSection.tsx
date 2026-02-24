@@ -43,7 +43,7 @@ export default function TopTenSection() {
             }}
             spaceBetween={25}
             slidesPerView={'auto'}
-            speed={1200}
+            speed={800}
             grabCursor={true}
             slidesPerGroup={1}
             className="top-ten-swiper overflow-visible!"

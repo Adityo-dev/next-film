@@ -21,7 +21,7 @@ export default function GenreSection() {
   const { data: movies, isLoading } = useMoviesByGenre(activeGenre);
 
   return (
-    <section className="bg-[#020617] px-6 py-20">
+    <section className="bg-[#020617] px-4 py-20">
       <div className="mx-auto max-w-400">
         <div className="mb-12 flex flex-col items-start justify-between gap-8 md:flex-row md:items-end">
           <div className="space-y-2">

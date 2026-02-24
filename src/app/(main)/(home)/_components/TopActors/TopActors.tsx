@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 'use client';
 import { usePopularActors } from '@/hooks/useMovies/useMovies';
-import { Loader2, Plus } from 'lucide-react';
+import { ArrowRight, Loader2 } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -10,89 +10,52 @@ export default function TopActors() {
 
   if (isLoading)
     return (
-      <div className="flex h-40 items-center justify-center">
-        <Loader2 className="animate-spin text-blue-600" />
+      <div className="flex h-60 items-center justify-center bg-[#020617]">
+        <Loader2 className="animate-spin text-blue-600" size={40} />
       </div>
     );
 
   return (
-    <section className="relative overflow-hidden bg-[#020617] py-24">
-      {/* Background Decorative Text */}
-      <div className="absolute top-10 left-0 -rotate-90 text-[120px] font-black text-white/2 uppercase select-none">
-        ACTORS
-      </div>
-
-      <div className="relative z-10 mx-auto mb-16 max-w-400 px-6">
-        <div className="flex items-center justify-between">
-          <div className="space-y-2">
-            <h2 className="text-4xl font-black tracking-tighter text-white uppercase italic md:text-5xl">
-              Cast{' '}
-              <span className="text-blue-600 underline decoration-white/10 underline-offset-8">
-                Spotlight
-              </span>
+    <section className="overflow-hidden bg-[#020617] py-20 lg:py-32">
+      <div className="mx-auto max-w-400 px-4">
+        {/* Header Section */}
+        <div className="mb-16 flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
+          <div className="space-y-3">
+            <div className="flex items-center gap-2">
+              <span className="h-1 w-10 rounded-full bg-blue-600"></span>
+              <p className="text-[10px] font-black tracking-[0.5em] text-blue-500 uppercase">
+                Industry Icons
+              </p>
+            </div>
+            <h2 className="text-4xl font-black tracking-tighter text-white uppercase italic md:text-6xl">
+              Cast <span className="text-blue-600">Spotlight</span>
             </h2>
-            <p className="text-xs font-bold tracking-[0.4em] text-gray-500 uppercase">
-              Discover the faces behind the stories
-            </p>
           </div>
-        </div>
-      </div>
 
-      {/* Unique Tilted Marquee Container */}
-      <div className="relative flex scale-110 -rotate-3 md:-rotate-2">
-        <div className="animate-marquee flex gap-8 py-10 whitespace-nowrap">
-          {actors?.map((actor: any) => (
+          <Link
+            href="/actors"
+            className="group flex items-center gap-2 text-xs font-bold text-gray-400 transition-colors hover:text-white"
+          >
+            VIEW ALL ARTISTS{' '}
+            <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
+          </Link>
+        </div>
+
+        {/* Actors Grid/Scroll Area */}
+        <div className="no-scrollbar flex gap-6 overflow-x-auto pb-10 md:grid md:grid-cols-4 md:overflow-visible lg:grid-cols-5 xl:grid-cols-6">
+          {actors?.slice(0, 12).map((actor: any) => (
             <ActorCard key={actor.id} actor={actor} />
           ))}
         </div>
-
-        {/* Duplicate Row */}
-        <div className="animate-marquee2 absolute top-0 flex gap-8 py-10 whitespace-nowrap">
-          {actors?.map((actor: any) => (
-            <ActorCard key={`${actor.id}-clone`} actor={actor} />
-          ))}
-        </div>
       </div>
-
-      <style jsx global>{`
-        @keyframes marquee {
-          0% {
-            transform: translateX(0%);
-          }
-          100% {
-            transform: translateX(-100%);
-          }
-        }
-        @keyframes marquee2 {
-          0% {
-            transform: translateX(100%);
-          }
-          100% {
-            transform: translateX(0%);
-          }
-        }
-        .animate-marquee {
-          animation: marquee 50s linear infinite;
-        }
-        .animate-marquee2 {
-          animation: marquee2 50s linear infinite;
-        }
-        .animate-marquee:hover,
-        .animate-marquee2:hover {
-          animation-play-state: paused;
-        }
-      `}</style>
     </section>
   );
 }
 
 const ActorCard = ({ actor }: { actor: any }) => (
-  <div className="group relative">
-    <Link
-      href={`/actor/${actor.id}`}
-      className="relative block h-80 w-55 overflow-hidden rounded-[2.5rem] bg-gray-900 shadow-2xl transition-all duration-700 hover:-translate-y-4 hover:rotate-2 md:h-100 md:w-70"
-    >
-      {/* Image with Parallax-like effect */}
+  <Link href={`/actor/${actor.id}`} className="group relative w-50 shrink-0 md:w-auto">
+    {/* Profile Image Container */}
+    <div className="relative aspect-3/4 overflow-hidden rounded-2xl border border-white/5 bg-[#0f172a] transition-all duration-500 group-hover:border-blue-500/50 group-hover:shadow-[0_0_30px_rgba(37,99,235,0.2)]">
       <Image
         src={
           actor.profile_path
@@ -100,35 +63,30 @@ const ActorCard = ({ actor }: { actor: any }) => (
             : '/actor-placeholder.jpg'
         }
         fill
-        className="object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110"
+        className="object-cover transition-transform duration-700 group-hover:scale-110"
         alt={actor.name}
       />
 
-      {/* Dark Gradient Bottom */}
-      <div className="absolute inset-0 bg-linear-to-t from-[#020617] via-transparent to-transparent opacity-90 transition-opacity duration-500 group-hover:opacity-100" />
+      {/* Overlays */}
+      <div className="absolute inset-0 bg-linear-to-t from-[#020617] via-transparent to-transparent opacity-60" />
 
-      {/* Content Info */}
-      <div className="absolute inset-x-0 bottom-0 p-8">
-        <div className="mb-2 flex translate-y-4 items-center gap-2 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
-          <span className="h-0.5 w-8 bg-blue-600"></span>
-          <p className="text-[10px] font-bold tracking-widest text-blue-500 uppercase">
-            {actor.known_for_department}
-          </p>
-        </div>
-
-        <h3 className="text-xl leading-none font-black text-white transition-all duration-500 group-hover:text-blue-500 md:text-2xl">
-          {actor.name.split(' ').map((name: string, i: number) => (
-            <span key={i} className="block">
-              {name}
-            </span>
-          ))}
+      {/* Name and Department on Hover */}
+      <div className="absolute inset-x-0 bottom-0 translate-y-2 p-5 transition-transform duration-500 group-hover:translate-y-0">
+        <p className="mb-1 text-[9px] font-bold tracking-widest text-blue-500 uppercase">
+          {actor.known_for_department}
+        </p>
+        <h3 className="text-lg leading-tight font-black text-white uppercase italic">
+          {actor.name}
         </h3>
       </div>
+    </div>
 
-      {/* Floating Action Icon */}
-      <div className="absolute top-6 right-6 flex h-10 w-10 items-center justify-center rounded-full bg-blue-600 text-white opacity-0 transition-all duration-500 group-hover:rotate-90 group-hover:opacity-100">
-        <Plus size={20} />
+    {/* Subtle Decorative Element */}
+    <div className="mt-3 flex items-center justify-between px-1">
+      <div className="h-px flex-1 bg-white/5 transition-colors group-hover:bg-blue-600/30"></div>
+      <div className="ml-3 text-[10px] font-bold text-gray-600 transition-colors group-hover:text-blue-500">
+        #{actor.popularity?.toFixed(0)}
       </div>
-    </Link>
-  </div>
+    </div>
+  </Link>
 );
