@@ -22,13 +22,13 @@ export default function GenreSection() {
 
   return (
     <section className="bg-[#020617] px-4 py-20">
-      <div className="mx-auto max-w-400">
+      <div className="mx-auto w-full px-12">
         <div className="mb-12 flex flex-col items-start justify-between gap-8 md:flex-row md:items-end">
           <div className="space-y-2">
             <h2 className="text-4xl font-black text-white uppercase italic">
-              Explore by <span className="text-blue-600">Genre</span>
+              Explore by <span className="text-[#DB1A1A]">Genre</span>
             </h2>
-            <div className="h-1 w-20 rounded-full bg-blue-600"></div>
+            <div className="h-1 w-20 rounded-full bg-[#DB1A1A]"></div>
           </div>
 
           {/* Genre Tabs */}
@@ -39,7 +39,7 @@ export default function GenreSection() {
                 onClick={() => setActiveGenre(genre.id)}
                 className={`cursor-pointer rounded-full px-6 py-2 text-sm font-bold transition-all ${
                   activeGenre === genre.id
-                    ? 'bg-blue-600 text-white shadow-[0_0_20px_rgba(37,99,235,0.4)]'
+                    ? 'bg-[#DB1A1A] text-white shadow-[0_0_20px_rgba(37,99,235,0.4)]'
                     : 'bg-white/5 text-gray-400 hover:bg-white/10'
                 }`}
               >
@@ -52,7 +52,7 @@ export default function GenreSection() {
         {/* Movies Grid */}
         {isLoading ? (
           <div className="flex h-60 items-center justify-center">
-            <Loader2 className="animate-spin text-blue-600" />
+            <Loader2 className="animate-spin text-[#DB1A1A]" />
           </div>
         ) : (
           <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">

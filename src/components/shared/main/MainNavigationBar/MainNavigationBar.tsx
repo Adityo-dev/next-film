@@ -69,7 +69,7 @@ const MainNavigationBar = () => {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
             <span className="text-2xl font-black tracking-tighter text-white uppercase italic">
-              Next<span className="text-blue-600">Film</span>
+              Next<span className="text-[#DB1A1A]">Film</span>
             </span>
           </Link>
 
@@ -97,7 +97,7 @@ const MainNavigationBar = () => {
             >
               <Search className="h-6 w-6" />
             </button>
-            <div className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-full border border-white/20 bg-linear-to-tr from-blue-600 to-purple-600 text-xs font-bold text-white shadow-lg">
+            <div className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-full border border-white/20 bg-linear-to-tr from-[#DB1A1A] to-purple-600 text-xs font-bold text-white shadow-lg">
               AD
             </div>
           </div>
@@ -207,7 +207,7 @@ const MainNavigationBar = () => {
                     <button
                       key={tag}
                       onClick={() => setSearchQuery(tag)}
-                      className="rounded-full border border-white/10 bg-white/5 px-6 py-2 text-xs font-bold text-white uppercase shadow-sm transition-all hover:border-blue-400 hover:bg-blue-600"
+                      className="rounded-full border border-white/10 bg-white/5 px-6 py-2 text-xs font-bold text-white uppercase shadow-sm transition-all hover:border-blue-400 hover:bg-[#DB1A1A]"
                     >
                       {tag}
                     </button>

@@ -12,7 +12,7 @@ export default function NotFound() {
       {/* Background Cinematic Grain & Light Effect */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20" />
-        <div className="absolute top-1/2 left-1/2 h-125 w-125 -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-600/10 blur-[120px]" />
+        <div className="absolute top-1/2 left-1/2 h-125 w-125 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#DB1A1A]/10 blur-[120px]" />
       </div>
 
       <div className="relative z-10">
@@ -26,7 +26,7 @@ export default function NotFound() {
             Scene Not Found
           </p>
           <h2 className="text-4xl font-black text-white uppercase italic md:text-6xl">
-            Lost in <span className="text-blue-600">Space?</span>
+            Lost in <span className="text-[#DB1A1A]">Space?</span>
           </h2>
           <p className="mt-4 max-w-md text-sm font-medium text-gray-500">
             The movie or page you are looking for has been deleted from the script or never existed
@@ -47,7 +47,7 @@ export default function NotFound() {
 
         <Link
           href="/"
-          className="flex cursor-pointer items-center gap-2 rounded-full bg-blue-600 px-8 py-3 text-sm font-bold text-white shadow-lg shadow-blue-600/20 transition-all hover:bg-blue-700 active:scale-95"
+          className="flex cursor-pointer items-center gap-2 rounded-full bg-[#DB1A1A] px-8 py-3 text-sm font-bold text-white shadow-lg shadow-[#DB1A1A]/20 transition-all hover:bg-blue-700 active:scale-95"
         >
           <Home size={18} />
           BACK TO HOME

@@ -5,9 +5,9 @@ import Link from 'next/link';
 const MovieCard = ({ movie }: { movie: Movie }) => {
   return (
     <Link href={`/movie/${movie?.id}`} className="group cursor-pointer">
-      <div className="relative overflow-hidden rounded-xl bg-[#0f172a] shadow-lg">
+      <div className="relative overflow-hidden rounded-sm bg-[#0f172a] shadow-lg">
         {/* Image Section */}
-        <div className="relative aspect-2/3 w-full">
+        <div className="relative aspect-3/4 w-full">
           <Image
             fill
             src={`https://image.tmdb.org/t/p/w500${movie?.poster_path}`}
@@ -26,7 +26,7 @@ const MovieCard = ({ movie }: { movie: Movie }) => {
             <span className="text-sm font-bold text-[#fbbf24]">
               ⭐ {movie?.vote_average.toFixed(1)}
             </span>
-            <span className="rounded bg-[#2563eb] px-2 py-1 text-xs text-white">Details</span>
+            <span className="rounded bg-[#DB1A1A] px-2 py-1 text-xs text-white">Details</span>
           </div>
         </div>
 
@@ -38,7 +38,7 @@ const MovieCard = ({ movie }: { movie: Movie }) => {
 
       {/* Title Section */}
       <div className="mt-3">
-        <h3 className="truncate text-lg font-semibold text-[#f8fafc] transition-colors group-hover:text-[#2563eb]">
+        <h3 className="truncate text-lg font-semibold text-[#f8fafc] transition-colors group-hover:text-[#DB1A1A]">
           {movie?.title}
         </h3>
         <p className="mt-1 text-sm text-[#94a3b8]">
