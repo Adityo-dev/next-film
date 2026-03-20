@@ -16,7 +16,7 @@ export default function UpcomingSection() {
   if (isLoading)
     return (
       <div className="flex h-60 items-center justify-center bg-[#020617]">
-        <Loader2 className="h-10 w-10 animate-spin text-blue-600" />
+        <Loader2 className="h-10 w-10 animate-spin text-[#DB1A1A]" />
       </div>
     );
 
@@ -27,7 +27,7 @@ export default function UpcomingSection() {
         <div className="mb-12 flex items-end justify-between border-b border-white/5 pb-6">
           <div className="space-y-1">
             <h2 className="text-4xl font-black tracking-tight text-white uppercase italic">
-              Upcoming <span className="text-blue-600">Releases</span>
+              Upcoming <span className="text-[#DB1A1A]">Releases</span>
             </h2>
             <p className="text-sm font-medium tracking-widest text-gray-500">
               STAY TUNED FOR THE NEXT BIG HITS
@@ -35,10 +35,10 @@ export default function UpcomingSection() {
           </div>
 
           <div className="hidden gap-2 md:flex">
-            <button className="upcoming-prev flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-white/5 text-white transition-all hover:bg-blue-600 disabled:opacity-10">
+            <button className="upcoming-prev flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-white/5 text-white transition-all hover:bg-[#DB1A1A] disabled:opacity-10">
               <ChevronLeft size={20} />
             </button>
-            <button className="upcoming-next flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-white/5 text-white transition-all hover:bg-blue-600 disabled:opacity-10">
+            <button className="upcoming-next flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-white/5 text-white transition-all hover:bg-[#DB1A1A] disabled:opacity-10">
               <ChevronRight size={20} />
             </button>
           </div>

@@ -5,7 +5,7 @@ export default function CallToAction() {
   return (
     <section className="relative w-full overflow-hidden bg-[#020617] py-12">
       {/* Background Glows */}
-      <div className="absolute top-0 left-1/4 h-96 w-96 rounded-full bg-blue-600/10 blur-[120px]" />
+      <div className="absolute top-0 left-1/4 h-96 w-96 rounded-full bg-[#DB1A1A]/10 blur-[120px]" />
       <div className="absolute right-1/4 bottom-0 h-96 w-96 rounded-full bg-blue-900/10 blur-[120px]" />
 
       <div className="relative z-10 mx-auto max-w-400 px-4">
@@ -42,10 +42,10 @@ export default function CallToAction() {
             </div>
 
             {/* Right Form Area (The Subscription Ticket) */}
-            <div className="relative flex flex-col justify-center bg-blue-600/2 p-8 md:p-16 lg:p-20">
+            <div className="relative flex flex-col justify-center bg-[#DB1A1A]/2 p-8 md:p-16 lg:p-20">
               <div className="rounded-3xl border border-white/10 bg-[#020617]/40 p-6 shadow-2xl backdrop-blur-2xl md:p-8">
                 <div className="mb-6 flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-600 shadow-lg shadow-blue-600/30">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#DB1A1A] shadow-lg shadow-[#DB1A1A]/30">
                     <Sparkles size={20} className="text-white" />
                   </div>
                   <h4 className="text-xl font-bold tracking-tight text-white uppercase">
@@ -62,11 +62,11 @@ export default function CallToAction() {
                     <input
                       type="email"
                       placeholder="Enter your email"
-                      className="w-full rounded-xl border border-white/10 bg-white/5 py-4 pr-4 pl-12 text-white ring-blue-600 transition-all outline-none focus:bg-white/8 focus:ring-2"
+                      className="w-full rounded-xl border border-white/10 bg-white/5 py-4 pr-4 pl-12 text-white ring-[#DB1A1A] transition-all outline-none focus:bg-white/8 focus:ring-2"
                     />
                   </div>
 
-                  <button className="group relative flex w-full cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-xl bg-blue-600 py-4 font-black text-white transition-all hover:bg-blue-700 hover:shadow-[0_0_30px_rgba(37,99,235,0.4)] active:scale-[0.98]">
+                  <button className="group relative flex w-full cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-xl bg-[#DB1A1A] py-4 font-black text-white transition-all hover:bg-blue-700 hover:shadow-[0_0_30px_rgba(37,99,235,0.4)] active:scale-[0.98]">
                     <span className="relative z-10 flex items-center gap-2 tracking-widest italic">
                       ACTIVATE NOW <Send size={18} />
                     </span>

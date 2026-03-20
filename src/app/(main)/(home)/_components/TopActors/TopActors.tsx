@@ -11,7 +11,7 @@ export default function TopActors() {
   if (isLoading)
     return (
       <div className="flex h-60 items-center justify-center bg-[#020617]">
-        <Loader2 className="animate-spin text-blue-600" size={40} />
+        <Loader2 className="animate-spin text-[#DB1A1A]" size={40} />
       </div>
     );
 
@@ -22,13 +22,13 @@ export default function TopActors() {
         <div className="mb-16 flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
           <div className="space-y-3">
             <div className="flex items-center gap-2">
-              <span className="h-1 w-10 rounded-full bg-blue-600"></span>
+              <span className="h-1 w-10 rounded-full bg-[#DB1A1A]"></span>
               <p className="text-[10px] font-black tracking-[0.5em] text-blue-500 uppercase">
                 Industry Icons
               </p>
             </div>
             <h2 className="text-4xl font-black tracking-tighter text-white uppercase italic md:text-6xl">
-              Cast <span className="text-blue-600">Spotlight</span>
+              Cast <span className="text-[#DB1A1A]">Spotlight</span>
             </h2>
           </div>
 
@@ -83,7 +83,7 @@ const ActorCard = ({ actor }: { actor: any }) => (
 
     {/* Subtle Decorative Element */}
     <div className="mt-3 flex items-center justify-between px-1">
-      <div className="h-px flex-1 bg-white/5 transition-colors group-hover:bg-blue-600/30"></div>
+      <div className="h-px flex-1 bg-white/5 transition-colors group-hover:bg-[#DB1A1A]/30"></div>
       <div className="ml-3 text-[10px] font-bold text-gray-600 transition-colors group-hover:text-blue-500">
         #{actor.popularity?.toFixed(0)}
       </div>

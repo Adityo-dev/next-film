@@ -54,7 +54,7 @@ export default function MoviesPage() {
     <Suspense
       fallback={
         <div className="flex h-screen items-center justify-center bg-[#020617]">
-          <Loader2 className="animate-spin text-blue-600" />
+          <Loader2 className="animate-spin text-[#DB1A1A]" />
         </div>
       }
     >
@@ -159,7 +159,7 @@ function MoviesContent() {
                 }}
                 className={`cursor-pointer rounded-md px-5 py-2 text-xs font-bold transition-all ${
                   activeGenre === genre.id && !searchTerm
-                    ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/40'
+                    ? 'bg-[#DB1A1A] text-white shadow-lg shadow-[#DB1A1A]/40'
                     : 'bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white'
                 }`}
               >
@@ -186,7 +186,7 @@ function MoviesContent() {
         {/* --- MOVIE GRID --- */}
         {loading ? (
           <div className="flex h-64 items-center justify-center">
-            <Loader2 className="h-10 w-10 animate-spin text-blue-600" />
+            <Loader2 className="h-10 w-10 animate-spin text-[#DB1A1A]" />
           </div>
         ) : (
           <div className="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">

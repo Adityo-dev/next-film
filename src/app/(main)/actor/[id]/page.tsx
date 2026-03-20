@@ -18,7 +18,7 @@ export default function ActorDetails() {
   if (isLoading)
     return (
       <div className="flex h-screen items-center justify-center bg-[#020617]">
-        <Loader2 className="animate-spin text-blue-600" />
+        <Loader2 className="animate-spin text-[#DB1A1A]" />
       </div>
     );
 
@@ -26,13 +26,13 @@ export default function ActorDetails() {
     <main className="min-h-screen bg-[#020617] px-6 py-20">
       <div className="mx-auto max-w-400">
         <h2 className="mb-10 text-3xl font-black text-white uppercase italic">
-          Movies <span className="text-blue-600">Featuring Him/Her</span>
+          Movies <span className="text-[#DB1A1A]">Featuring Him/Her</span>
         </h2>
 
         <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
           {movies?.map((movie: any) => (
             <Link key={movie.id} href={`/movie/${movie.id}`} className="group block">
-              <div className="relative aspect-2/3 overflow-hidden rounded-xl border border-white/10 transition-all group-hover:border-blue-600">
+              <div className="relative aspect-2/3 overflow-hidden rounded-xl border border-white/10 transition-all group-hover:border-[#DB1A1A]">
                 <Image
                   src={
                     movie.poster_path
