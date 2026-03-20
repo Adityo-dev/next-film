@@ -16,37 +16,35 @@ export default function TopActors() {
     );
 
   return (
-    <section className="overflow-hidden bg-[#020617] py-20 lg:py-32">
-      <div className="mx-auto max-w-400 px-4">
-        {/* Header Section */}
-        <div className="mb-16 flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
-          <div className="space-y-3">
-            <div className="flex items-center gap-2">
-              <span className="h-1 w-10 rounded-full bg-[#DB1A1A]"></span>
-              <p className="text-[10px] font-black tracking-[0.5em] text-blue-500 uppercase">
-                Industry Icons
-              </p>
-            </div>
-            <h2 className="text-4xl font-black tracking-tighter text-white uppercase italic md:text-6xl">
-              Cast <span className="text-[#DB1A1A]">Spotlight</span>
-            </h2>
+    <section className="overflow-hidden bg-[#020617] px-4 py-12 2xl:px-10">
+      {/* Header Section */}
+      <div className="mb-16 flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
+        <div className="space-y-3">
+          <div className="flex items-center gap-2">
+            <span className="h-1 w-10 rounded-full bg-[#DB1A1A]"></span>
+            <p className="text-[10px] font-black tracking-[0.5em] text-blue-500 uppercase">
+              Industry Icons
+            </p>
           </div>
-
-          <Link
-            href="/actors"
-            className="group flex items-center gap-2 text-xs font-bold text-gray-400 transition-colors hover:text-white"
-          >
-            VIEW ALL ARTISTS{' '}
-            <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
-          </Link>
+          <h2 className="text-4xl font-black tracking-tighter text-white uppercase italic md:text-4xl">
+            Cast <span className="text-[#DB1A1A]">Spotlight</span>
+          </h2>
         </div>
 
-        {/* Actors Grid/Scroll Area */}
-        <div className="no-scrollbar flex gap-6 overflow-x-auto pb-10 md:grid md:grid-cols-4 md:overflow-visible lg:grid-cols-5 xl:grid-cols-6">
-          {actors?.slice(0, 12).map((actor: any) => (
-            <ActorCard key={actor.id} actor={actor} />
-          ))}
-        </div>
+        <Link
+          href="/actors"
+          className="group flex items-center gap-2 text-xs font-bold text-gray-400 transition-colors hover:text-white"
+        >
+          VIEW ALL ARTISTS{' '}
+          <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
+        </Link>
+      </div>
+
+      {/* Actors Grid/Scroll Area */}
+      <div className="no-scrollbar flex gap-6 overflow-x-auto pb-10 md:grid md:grid-cols-4 md:overflow-visible lg:grid-cols-5 xl:grid-cols-6">
+        {actors?.slice(0, 12).map((actor: any) => (
+          <ActorCard key={actor.id} actor={actor} />
+        ))}
       </div>
     </section>
   );
