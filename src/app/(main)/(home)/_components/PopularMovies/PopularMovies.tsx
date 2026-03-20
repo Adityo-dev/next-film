@@ -9,23 +9,12 @@ const PopularMovies = () => {
   const { data: movies, isLoading, isError } = usePopularMovies();
 
   // Error State
-  if (isError)
-    return (
-      <div className="py-20 text-center">
-        <p className="text-xl font-bold text-red-500">Oops! Something went wrong!</p>
-        <button
-          onClick={() => window.location.reload()}
-          className="mt-4 text-sm text-gray-400 underline"
-        >
-          Try again
-        </button>
-      </div>
-    );
+  if (isError) return null;
 
   return (
-    <section className="mx-auto w-full px-4 py-12 xl:px-10">
+    <section className="mx-auto w-full px-4 py-12 2xl:px-10">
       <div className="mb-8 flex items-center justify-between gap-4">
-        <h2 className="border-l-4 border-[#DB1A1A] pl-4 text-xl font-bold text-[#f8fafc] md:text-3xl">
+        <h2 className="border-l-4 border-[#DB1A1A] pl-4 text-xl font-semibold text-[#f8fafc] md:text-2xl xl:text-3xl">
           Popular Movies
         </h2>
 

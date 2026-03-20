@@ -21,7 +21,7 @@ export default function TopTenSection() {
     );
 
   return (
-    <section className="mx-auto w-full px-4 py-12 xl:px-10">
+    <section className="mx-auto w-full px-4 py-12 2xl:px-10">
       {/* Header */}
       <div className="mb-6 flex items-center justify-between">
         <div className="space-y-1">

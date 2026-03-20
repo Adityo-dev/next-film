@@ -49,7 +49,7 @@ const Hero = ({ trendingMovies }: { trendingMovies: Movie[] }) => {
               </div>
 
               {/* Content Area */}
-              <div className="relative z-20 mx-auto w-full max-w-400 px-4">
+              <div className="relative z-20 mx-auto w-full px-4 xl:px-10">
                 <div className="max-w-3xl text-center md:text-left">
                   {/* Badge & Rating */}
                   <div className="mb-4 flex items-center justify-center gap-3 md:justify-start">
@@ -75,13 +75,13 @@ const Hero = ({ trendingMovies }: { trendingMovies: Movie[] }) => {
                   <div className="flex flex-col items-center gap-4 sm:flex-row md:justify-start">
                     <Link
                       href={`/movie/${movie?.id}`}
-                      className="group flex w-full items-center justify-center gap-2 rounded-xl bg-[#DB1A1A] px-8 py-3.5 font-bold text-white shadow-lg shadow-blue-500/20 transition-all hover:bg-blue-700 active:scale-95 sm:w-auto md:px-10 md:py-4"
+                      className="group flex w-full items-center justify-center gap-2 rounded-md bg-[#DB1A1A] px-8 py-3.5 font-bold text-white shadow-sm shadow-blue-500/20 transition-all hover:bg-[#DB1A1A]/80 active:scale-95 sm:w-auto md:px-10 md:py-4"
                     >
                       <Play size={18} fill="currentColor" />
                       Watch Now
                     </Link>
 
-                    <button className="flex w-full items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/10 px-8 py-3.5 font-bold text-white backdrop-blur-md transition-all hover:bg-white/20 sm:w-auto md:px-10 md:py-4">
+                    <button className="flex w-full items-center justify-center gap-2 rounded-md border border-white/10 bg-white/10 px-8 py-3.5 font-bold text-white backdrop-blur-md transition-all hover:bg-white/20 sm:w-auto md:px-10 md:py-4">
                       <Plus size={20} />
                       Watch list
                     </button>

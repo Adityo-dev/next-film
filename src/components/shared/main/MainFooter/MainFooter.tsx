@@ -5,13 +5,13 @@ const MainFooter = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative overflow-hidden bg-[#020617] pt-24 pb-10">
+    <footer className="relative overflow-hidden bg-[#020617] pt-24">
       {/* Background Decorative Elements - Subtle Blue Glow */}
       <div className="absolute top-0 left-0 h-px w-full bg-linear-to-r from-transparent via-[#DB1A1A]/30 to-transparent"></div>
       <div className="absolute -top-24 -left-24 h-96 w-96 rounded-full bg-[#DB1A1A]/5 blur-[120px]"></div>
       <div className="absolute -right-24 -bottom-24 h-96 w-96 rounded-full bg-[#DB1A1A]/5 blur-[120px]"></div>
 
-      <div className="relative z-10 mx-auto max-w-400 px-4">
+      <div className="relative z-10 mx-auto w-full px-4 py-12 2xl:px-10">
         <div className="grid grid-cols-1 gap-16 lg:grid-cols-12">
           {/* Brand & Newsletter Section */}
           <div className="space-y-10 lg:col-span-5">

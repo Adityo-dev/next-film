@@ -1,7 +1,8 @@
 /* eslint-disable no-console */
 'use client';
 
-import { Film, Loader2, Search } from 'lucide-react'; // Film আইকন যোগ করা হয়েছে
+import ImageNoPreview from '@/components/shared/main/ImageNoPreview/ImageNoPreview';
+import { Loader2, Search } from 'lucide-react'; // Film আইকন যোগ করা হয়েছে
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter, useSearchParams } from 'next/navigation';
@@ -36,10 +37,7 @@ const MovieCardImage = ({ movie }: { movie: Movie }) => {
           }
         />
       ) : (
-        <div className="flex h-full w-full flex-col items-center justify-center gap-3 bg-gray-900 text-gray-700">
-          <Film size={48} strokeWidth={1} />
-          <p className="text-[10px] font-black tracking-widest uppercase">No Preview</p>
-        </div>
+        <ImageNoPreview />
       )}
 
       <div className="absolute top-2 right-2 rounded-lg border border-white/10 bg-black/60 px-2 py-1 text-[10px] font-black text-yellow-500 backdrop-blur-md">

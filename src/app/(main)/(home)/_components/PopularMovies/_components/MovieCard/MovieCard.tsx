@@ -5,7 +5,7 @@ import Link from 'next/link';
 const MovieCard = ({ movie }: { movie: Movie }) => {
   return (
     <Link href={`/movie/${movie?.id}`} className="group cursor-pointer">
-      <div className="relative overflow-hidden rounded-sm bg-[#0f172a] shadow-lg">
+      <div className="relative overflow-hidden rounded-sm bg-[#0f172a] shadow-sm">
         {/* Image Section */}
         <div className="relative aspect-3/4 w-full">
           <Image
@@ -23,7 +23,7 @@ const MovieCard = ({ movie }: { movie: Movie }) => {
             {movie?.overview || 'No description available.'}
           </p>
           <div className="mt-3 flex items-center justify-between">
-            <span className="text-sm font-bold text-[#fbbf24]">
+            <span className="text-sm font-semibold text-[#fbbf24]">
               ⭐ {movie?.vote_average.toFixed(1)}
             </span>
             <span className="rounded bg-[#DB1A1A] px-2 py-1 text-xs text-white">Details</span>
@@ -31,14 +31,14 @@ const MovieCard = ({ movie }: { movie: Movie }) => {
         </div>
 
         {/* Rating Tag  */}
-        <div className="absolute top-2 right-2 rounded bg-[#020617]/70 px-2 py-1 text-sm font-semibold text-[#fbbf24] backdrop-blur-md group-hover:hidden">
+        <div className="absolute top-2 right-2 rounded bg-[#020617]/20 px-2 py-1 text-xs font-medium text-[#fbbf24] backdrop-blur-md group-hover:hidden">
           ⭐ {movie?.vote_average.toFixed(1)}
         </div>
       </div>
 
       {/* Title Section */}
       <div className="mt-3">
-        <h3 className="truncate text-lg font-semibold text-[#f8fafc] transition-colors group-hover:text-[#DB1A1A]">
+        <h3 className="truncate font-semibold text-[#f8fafc] transition-colors group-hover:text-[#DB1A1A]">
           {movie?.title}
         </h3>
         <p className="mt-1 text-sm text-[#94a3b8]">
