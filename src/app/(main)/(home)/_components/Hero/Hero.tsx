@@ -53,7 +53,7 @@ const Hero = ({ trendingMovies }: { trendingMovies: Movie[] }) => {
                 <div className="max-w-3xl text-center md:text-left">
                   {/* Badge & Rating */}
                   <div className="mb-4 flex items-center justify-center gap-3 md:justify-start">
-                    <span className="rounded-md bg-[#DB1A1A] px-3 py-1 text-[10px] font-black tracking-widest text-white uppercase md:text-xs">
+                    <span className="rounded bg-[#DB1A1A] px-3 py-1 text-[10px] font-semibold tracking-widest text-white uppercase md:text-xs">
                       Trending
                     </span>
                     <span className="text-sm font-bold text-yellow-400 md:text-base">
