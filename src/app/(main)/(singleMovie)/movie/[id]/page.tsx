@@ -20,11 +20,11 @@ export default async function Page({ params }: { params: { id: string } }) {
     notFound();
   }
 
-  const trailer = movie.videos?.results?.find(
+  const trailer = movie?.videos?.results?.find(
     (v: any) => v.type === 'Trailer' && v.site === 'YouTube',
   );
-  const director = movie.credits?.crew?.find((c: any) => c.job === 'Director');
-  const mainCast = movie.credits?.cast;
+  const director = movie?.credits?.crew?.find((c: any) => c.job === 'Director');
+  const mainCast = movie?.credits?.cast;
 
   return (
     <main className="min-h-screen bg-[#020617] text-[#f8fafc]">
@@ -32,44 +32,44 @@ export default async function Page({ params }: { params: { id: string } }) {
       <section className="relative h-[60vh] w-full lg:h-[85vh]">
         <Image
           fill
-          src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
-          alt={movie.title}
+          src={`https://image.tmdb.org/t/p/original${movie?.backdrop_path}`}
+          alt={movie?.title}
           className="object-cover opacity-30"
           priority
         />
         <div className="absolute inset-0 bg-linear-to-t from-[#020617] via-[#020617]/40 to-transparent" />
 
-        <div className="relative mx-auto flex h-full max-w-400 items-end px-4 pb-12 md:px-8">
+        <div className="relative mx-auto flex h-full w-full items-end px-4 py-12 2xl:px-10">
           <div className="flex flex-col gap-8 lg:flex-row lg:items-center">
             {/* Poster Card */}
             <div className="hidden w-72 shrink-0 overflow-hidden rounded-2xl border border-white/10 shadow-2xl lg:block">
               <Image
                 width={500}
                 height={750}
-                src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-                alt={movie.title}
+                src={`https://image.tmdb.org/t/p/w500${movie?.poster_path}`}
+                alt={movie?.title}
                 className="w-full"
               />
             </div>
 
             {/* Movie Info Text */}
             <div className="max-w-4xl">
-              <h1 className="text-5xl font-black tracking-tight md:text-7xl">{movie.title}</h1>
-              <p className="mt-3 text-lg text-[#fbbf24] italic md:text-xl">{movie.tagline}</p>
+              <h1 className="text-5xl font-black tracking-tight md:text-7xl">{movie?.title}</h1>
+              <p className="mt-3 text-lg text-[#fbbf24] italic md:text-xl">{movie?.tagline}</p>
 
               <div className="mt-6 flex flex-wrap items-center gap-4 text-sm font-bold text-[#94a3b8]">
                 <div className="flex items-center gap-1 text-[#fbbf24]">
                   <span className="text-xl">⭐</span>
-                  <span className="text-white">{movie.vote_average?.toFixed(1)}</span>
+                  <span className="text-white">{movie?.vote_average?.toFixed(1)}</span>
                 </div>
                 <span>•</span>
-                <span>{movie.release_date?.split('-')[0]}</span>
+                <span>{movie?.release_date?.split('-')[0]}</span>
                 <span>•</span>
                 <span className="rounded border border-[#94a3b8] px-2 py-0.5 text-xs text-white">
-                  {movie.runtime} min
+                  {movie?.runtime} min
                 </span>
                 <div className="flex gap-2">
-                  {movie.genres?.map((g: any) => (
+                  {movie?.genres?.map((g: any) => (
                     <span key={g.id} className="text-[#DB1A1A]">
                       {g.name}
                     </span>
@@ -78,7 +78,7 @@ export default async function Page({ params }: { params: { id: string } }) {
               </div>
 
               <p className="mt-8 text-base leading-relaxed text-[#cbd5e1] md:text-lg lg:max-w-3xl">
-                {movie.overview}
+                {movie?.overview}
               </p>
 
               <div className="mt-10 flex flex-wrap gap-4">
@@ -95,7 +95,7 @@ export default async function Page({ params }: { params: { id: string } }) {
       </section>
 
       {/* --- DETAILS SECTION --- */}
-      <section className="container mx-auto px-4 py-16 md:px-8">
+      <section className="w-full px-4 py-12 2xl:px-10">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-4">
           {/* Left Column: Cast & Video */}
           <div className="space-y-16 lg:col-span-3">
@@ -162,18 +162,18 @@ export default async function Page({ params }: { params: { id: string } }) {
                   <div>
                     <p className="text-[10px] font-bold text-[#94a3b8] uppercase">Budget</p>
                     <p className="text-sm font-semibold text-green-500">
-                      {movie.budget > 0 ? `$${movie.budget.toLocaleString()}` : 'N/A'}
+                      {movie?.budget > 0 ? `$${movie?.budget.toLocaleString()}` : 'N/A'}
                     </p>
                   </div>
                   <div>
                     <p className="text-[10px] font-bold text-[#94a3b8] uppercase">Revenue</p>
                     <p className="text-sm font-semibold text-green-500">
-                      {movie.revenue > 0 ? `$${movie.revenue.toLocaleString()}` : 'N/A'}
+                      {movie?.revenue > 0 ? `$${movie?.revenue.toLocaleString()}` : 'N/A'}
                     </p>
                   </div>
                   <div>
                     <p className="text-[10px] font-bold text-[#94a3b8] uppercase">Original Title</p>
-                    <p className="text-sm font-semibold">{movie.original_title}</p>
+                    <p className="text-sm font-semibold">{movie?.original_title}</p>
                   </div>
                 </div>
               </div>
@@ -184,7 +184,7 @@ export default async function Page({ params }: { params: { id: string } }) {
                   Production
                 </h3>
                 <div className="grid grid-cols-2 gap-4">
-                  {movie.production_companies?.map(
+                  {movie?.production_companies?.map(
                     (company: any) =>
                       company.logo_path && (
                         <div
