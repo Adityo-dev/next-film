@@ -70,7 +70,7 @@ export default async function Page({ params }: { params: { id: string } }) {
                 </span>
                 <div className="flex gap-2">
                   {movie.genres?.map((g: any) => (
-                    <span key={g.id} className="text-[#2563eb]">
+                    <span key={g.id} className="text-[#DB1A1A]">
                       {g.name}
                     </span>
                   ))}
@@ -82,7 +82,7 @@ export default async function Page({ params }: { params: { id: string } }) {
               </p>
 
               <div className="mt-10 flex flex-wrap gap-4">
-                <button className="rounded-full bg-[#2563eb] px-10 py-4 font-extrabold text-white shadow-lg shadow-blue-600/30 transition-all hover:scale-105 hover:bg-[#3b82f6] active:scale-95">
+                <button className="rounded-full bg-[#DB1A1A] px-10 py-4 font-extrabold text-white shadow-lg shadow-[#DB1A1A]/30 transition-all hover:scale-105 hover:bg-[#3b82f6] active:scale-95">
                   ▶ Watch Now
                 </button>
                 <button className="rounded-full bg-white/10 px-10 py-4 font-extrabold backdrop-blur-md transition-all hover:bg-white/20">
@@ -102,7 +102,7 @@ export default async function Page({ params }: { params: { id: string } }) {
             {/* 1. Video/Trailer Player */}
             {trailer && (
               <div>
-                <h2 className="mb-8 border-l-4 border-[#2563eb] pl-4 text-2xl font-bold tracking-wider uppercase">
+                <h2 className="mb-8 border-l-4 border-[#DB1A1A] pl-4 text-2xl font-bold tracking-wider uppercase">
                   Official Trailer
                 </h2>
                 <div className="overflow-hidden rounded-2xl border border-white/5 bg-[#0f172a] shadow-2xl">
@@ -119,7 +119,7 @@ export default async function Page({ params }: { params: { id: string } }) {
 
             {/* 2. Cast List */}
             <div>
-              <h2 className="mb-8 border-l-4 border-[#2563eb] pl-4 text-2xl font-bold tracking-wider uppercase">
+              <h2 className="mb-8 border-l-4 border-[#DB1A1A] pl-4 text-2xl font-bold tracking-wider uppercase">
                 Top Billed Cast
               </h2>
               <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-5">
@@ -137,7 +137,7 @@ export default async function Page({ params }: { params: { id: string } }) {
                         className="object-cover transition-transform duration-500 group-hover:scale-110"
                       />
                     </div>
-                    <p className="line-clamp-1 font-bold text-[#f8fafc] transition-colors group-hover:text-[#2563eb]">
+                    <p className="line-clamp-1 font-bold text-[#f8fafc] transition-colors group-hover:text-[#DB1A1A]">
                       {person.name}
                     </p>
                     <p className="line-clamp-1 text-xs text-[#94a3b8]">{person.character}</p>
@@ -151,7 +151,7 @@ export default async function Page({ params }: { params: { id: string } }) {
           <div className="lg:col-span-1">
             <div className="sticky top-24 space-y-8 rounded-2xl border border-white/5 bg-[#0f172a] p-8 shadow-xl">
               <div>
-                <h3 className="mb-6 border-b border-white/10 pb-2 text-lg font-bold tracking-widest text-[#2563eb] uppercase">
+                <h3 className="mb-6 border-b border-white/10 pb-2 text-lg font-bold tracking-widest text-[#DB1A1A] uppercase">
                   Information
                 </h3>
                 <div className="space-y-5">
@@ -180,7 +180,7 @@ export default async function Page({ params }: { params: { id: string } }) {
 
               {/* Production Companies */}
               <div>
-                <h3 className="mb-6 border-b border-white/10 pb-2 text-lg font-bold tracking-widest text-[#2563eb] uppercase">
+                <h3 className="mb-6 border-b border-white/10 pb-2 text-lg font-bold tracking-widest text-[#DB1A1A] uppercase">
                   Production
                 </h3>
                 <div className="grid grid-cols-2 gap-4">
