@@ -1,4 +1,3 @@
-import CallToAction from './_components/CallToAction/CallToAction';
 import GenreSection from './_components/GenreSection/GenreSection';
 import Hero from './_components/Hero/Hero';
 import PopularMovies from './_components/PopularMovies/PopularMovies';
@@ -28,7 +27,6 @@ const HomePage = async () => {
       <GenreSection />
       <UpcomingSection />
       <TopActors />
-      <CallToAction />
     </main>
   );
 };
