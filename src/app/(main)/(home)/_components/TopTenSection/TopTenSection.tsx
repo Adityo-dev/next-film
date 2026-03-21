@@ -33,7 +33,7 @@ export default function TopTenSection() {
       </div>
 
       {/* Swiper Wrapper */}
-      <div className="relative pb-10 md:pb-20">
+      <div className="relative">
         <Swiper
           modules={[Navigation]}
           navigation={{
