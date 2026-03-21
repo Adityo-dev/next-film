@@ -22,7 +22,7 @@ const Hero = ({ trendingMovies }: { trendingMovies: Movie[] }) => {
   const displayMovies = trendingMovies?.slice(0, 6) || [];
 
   return (
-    <section className="relative h-[85vh] w-full bg-[#020617] lg:h-[90vh]">
+    <section className="relative h-screen w-full bg-[#020617]">
       <Swiper
         modules={[Autoplay, Pagination, EffectFade]}
         effect="fade"
