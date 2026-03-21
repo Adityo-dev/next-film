@@ -23,7 +23,7 @@ const MovieCardImage = ({ movie }: { movie: Movie }) => {
   );
 
   return (
-    <div className="relative aspect-2/3 overflow-hidden rounded-2xl border border-white/5 bg-white/5 transition-all duration-500 group-hover:-translate-y-2 group-hover:border-blue-500/50">
+    <div className="relative aspect-2/3 overflow-hidden rounded-2xl border border-white/5 bg-white/5 transition-all duration-500 group-hover:-translate-y-2 group-hover:border-[#DB1A1A]">
       {movie.poster_path ? (
         <Image
           src={imgSrc}
@@ -144,7 +144,7 @@ function MoviesContent() {
         </div>
       </div>
 
-      <div className="mx-auto max-w-400 px-4 py-12">
+      <div className="mx-auto w-full px-4 py-12 2xl:px-10">
         {/* --- FILTERS & SEARCH --- */}
         <div className="mb-12 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
           <div className="flex flex-wrap gap-2">
@@ -155,9 +155,9 @@ function MoviesContent() {
                   setActiveGenre(genre.id);
                   setSearchTerm('');
                 }}
-                className={`cursor-pointer rounded-md px-5 py-2 text-xs font-bold transition-all ${
+                className={`cursor-pointer rounded-sm px-6 py-2 text-xs font-bold transition-all ${
                   activeGenre === genre.id && !searchTerm
-                    ? 'bg-[#DB1A1A] text-white shadow-lg shadow-[#DB1A1A]/40'
+                    ? 'bg-[#DB1A1A] text-white'
                     : 'bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white'
                 }`}
               >
@@ -168,7 +168,7 @@ function MoviesContent() {
 
           <div className="group relative w-full max-w-sm">
             <Search
-              className="absolute top-1/2 left-4 -translate-y-1/2 text-gray-500 transition-colors group-focus-within:text-blue-500"
+              className="absolute top-1/2 left-4 -translate-y-1/2 text-gray-500 transition-colors group-focus-within:text-[#DB1A1A]"
               size={16}
             />
             <input
@@ -176,7 +176,7 @@ function MoviesContent() {
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               placeholder="Search for movies..."
-              className="w-full rounded-md border border-white/10 bg-white/5 py-3 pr-6 pl-12 text-sm transition-all outline-none placeholder:text-gray-600 focus:border-blue-500/50"
+              className="w-full rounded-md border border-white/10 bg-white/5 py-3 pr-6 pl-12 text-sm transition-all outline-none placeholder:text-gray-600 focus:border-[#DB1A1A]"
             />
           </div>
         </div>
@@ -187,7 +187,7 @@ function MoviesContent() {
             <Loader2 className="h-10 w-10 animate-spin text-[#DB1A1A]" />
           </div>
         ) : (
-          <div className="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
+          <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
             {movies.length > 0 ? (
               movies.map((movie) => (
                 <Link href={`/movie/${movie?.id}`} key={movie.id} className="group cursor-pointer">

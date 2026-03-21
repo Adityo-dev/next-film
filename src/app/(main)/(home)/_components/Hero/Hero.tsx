@@ -19,7 +19,7 @@ interface Movie {
 }
 
 const Hero = ({ trendingMovies }: { trendingMovies: Movie[] }) => {
-  const displayMovies = trendingMovies?.slice(0, 6) || [];
+  const displayMovies = trendingMovies?.slice(0, 8) || [];
 
   return (
     <section className="relative h-screen w-full bg-[#020617]">
@@ -101,7 +101,7 @@ const Hero = ({ trendingMovies }: { trendingMovies: Movie[] }) => {
 
         .swiper-pagination-bullet {
           background: white !important;
-          opacity: 0.3;
+          opacity: 0.4;
         }
 
         .swiper-pagination-bullet-active {
